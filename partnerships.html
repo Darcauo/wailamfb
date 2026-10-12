@@ -95,7 +95,7 @@
       <div class="container contact-grid">
         <div class="form-card">
           <h3>Partnership enquiry</h3>
-          <form class="form-grid" data-partnership-inquiry>
+          <form class="form-grid" id="partnership-form">
             <div class="field">
               <label for="full-name">Full Name</label>
               <input id="full-name" type="text" name="full-name" placeholder="Your full name" />
@@ -131,6 +131,7 @@
               <textarea id="message" name="message" placeholder="Tell us more about your organization and the nature of the partnership."></textarea>
             </div>
             <button type="submit" class="primary-button">Submit Partnership Enquiry</button>
+            <p class="form-note">WhatsApp will open with your enquiry ready for you to review and send.</p>
           </form>
         </div>
 
@@ -148,6 +149,13 @@
   </main>
 
   <footer class="page-footer">
+    <div class="container footer-cta">
+      <div>
+        <span class="footer-kicker">HERE WHEN YOU NEED US</span>
+        <h2>Let’s make your next move possible.</h2>
+      </div>
+      <a class="footer-cta-link" href="contact.html">Talk to our team <span aria-hidden="true">↗</span></a>
+    </div>
     <div class="container footer-grid">
       <div class="footer-brand">
         <img src="images/logo.png" alt="Waila logo" />
@@ -181,9 +189,12 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">
-        <span>© 2026 Waila Microfinance Bank Ltd.</span>
-        <span>Privacy Policy · Terms & Conditions</span>
+      <div class="container footer-bottom-inner">
+        <a class="footer-bottom-brand" href="index.html" aria-label="Waila Microfinance Bank home">
+          <img src="images/logo.png" alt="Waila Microfinance Bank" />
+        </a>
+        <p>Your trust matters. Our team is here to answer questions about our services and your information.</p>
+        <span>© 2026 Waila Microfinance Bank Ltd. · RC Number 796152</span>
       </div>
     </div>
   </footer>

@@ -147,7 +147,7 @@ if (contactSubject) {
   }
 }
 
-const partnershipForm = document.querySelector('[data-partnership-inquiry]');
+const partnershipForm = document.querySelector('#partnership-form');
 if (partnershipForm) {
   partnershipForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -168,23 +168,30 @@ if (partnershipForm) {
     }
 
     const formData = new FormData(partnershipForm);
-    const fields = [
-      ['Full name', 'full-name'],
+    const enquiryFields = [
+      ['Full Name', 'full-name'],
       ['Organization', 'organization'],
       ['Email', 'email'],
-      ['Phone number', 'phone'],
-      ['Partnership type', 'partnership-type'],
+      ['Phone Number', 'phone'],
+      ['Partnership Type', 'partnership-type'],
       ['Message', 'message']
     ];
-    const inquiryDetails = fields
+    const enquiry = enquiryFields
       .map(([label, name]) => {
-        const value = String(formData.get(name) || '').trim();
-        return value ? `${label}: ${value}` : '';
+        const value = formData.get(name)?.toString().trim();
+        return value ? `${label}: ${value}` : null;
       })
-      .filter(Boolean)
-      .join('\n');
-    const message = `Hello Waila, I would like to make a partnership enquiry.\n\n${inquiryDetails}`;
+      .filter(Boolean);
+    const message = `Hello Waila, I would like to make a partnership enquiry.\n\n${enquiry.join('\n')}`;
+    const whatsappUrl = new URL('https://api.whatsapp.com/send');
+    whatsappUrl.searchParams.set('phone', whatsappNumber);
+    whatsappUrl.searchParams.set('text', message);
+    const whatsappWindow = window.open(whatsappUrl.toString(), '_blank');
 
-    window.location.assign(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`);
+    if (whatsappWindow) {
+      whatsappWindow.opener = null;
+    } else {
+      window.location.assign(whatsappUrl.toString());
+    }
   });
 }
