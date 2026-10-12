@@ -28,10 +28,18 @@ if (menuToggle && navMenu) {
   menuToggle.addEventListener('click', () => {
     const isOpen = navMenu.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
   });
 }
 
 const navItems = document.querySelectorAll('.nav-item');
+const closeNavItems = () => {
+  navItems.forEach((item) => {
+    item.classList.remove('open');
+    item.querySelector('button')?.setAttribute('aria-expanded', 'false');
+  });
+};
+
 navItems.forEach((item) => {
   const trigger = item.querySelector('button');
   if (!trigger) return;
@@ -40,14 +48,17 @@ navItems.forEach((item) => {
     event.stopPropagation();
     const isOpen = item.classList.contains('open');
 
-    navItems.forEach((other) => other.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+    closeNavItems();
+    if (!isOpen) {
+      item.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
 document.addEventListener('click', (event) => {
   if (!event.target.closest('.nav-item')) {
-    navItems.forEach((item) => item.classList.remove('open'));
+    closeNavItems();
   }
 });
 
@@ -55,5 +66,6 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 980 && navMenu) {
     navMenu.classList.remove('is-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation');
   }
 });

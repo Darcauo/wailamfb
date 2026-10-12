@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,278 +12,162 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
+    <div class="home-utility">
+      <div class="container">
+        <span>Here for our community in Karu and Nasarawa.</span>
+        <a href="tel:+2348035616156">Call us: +234 803 561 6156</a>
+      </div>
+    </div>
     <div class="container navbar">
-      <a href="/" class="brand" aria-label="Go to the Waila Microfinance Bank home page">
+      <a href="index.html" class="brand" aria-label="Go to the Waila Microfinance Bank home page">
         <img src="images/logo.png" alt="Waila Microfinance Bank logo" />
+        <span class="brand-name">Waila <small>Microfinance Bank</small></span>
       </a>
 
       <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
-        <div class="nav-item"><a href="about.html">About</a></div>
+        <div class="nav-item"><a href="personal-banking.html">Personal</a></div>
         <div class="nav-item">
-          <button type="button">Services</button>
+          <button type="button" aria-expanded="false">Business</button>
           <div class="dropdown">
-            <a href="services.html">All Services</a>
-            <a href="personal-banking.html">Personal Banking</a>
             <a href="business-banking.html">Business Banking</a>
             <a href="corporate-banking.html">Corporate Banking</a>
+            <a href="partnerships.html">Partnerships</a>
           </div>
         </div>
         <div class="nav-item"><a href="loans.html">Loans</a></div>
-        <div class="nav-item"><a href="partnerships.html">Partnerships</a></div>
+        <div class="nav-item"><a href="services.html">Services</a></div>
+        <div class="nav-item"><a href="about.html">About</a></div>
       </nav>
 
       <div class="header-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">☾</button>
+        <a href="contact.html" class="primary-button">Talk to our team <span aria-hidden="true">↗</span></a>
         <button class="mobile-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">☰</button>
-        <a href="contact.html" class="primary-button">Internet Banking</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="home-heading">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Karu, Nasarawa State</div>
-          <h1>Banking that feels <span>clearer</span> and more human.</h1>
+          <div class="eyebrow">Rooted in community. Ready for what’s next.</div>
+          <h1 id="home-heading">A little closer to <span>everything</span> you’re building.</h1>
           <p>
-            Waila Microfinance Bank supports households, traders, and growing businesses with practical financial services rooted in trust, accessibility, and customer care.
+            From everyday savings to the next big business idea, find thoughtful banking and real support right here in your community.
           </p>
           <div class="cta-row">
-            <a class="primary-button" href="contact.html">Visit the branch</a>
-            <a class="secondary-button" href="services.html">Our services</a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="visual-card">
-            <div class="hero-slider">
-              <div class="slide">
-                <div class="slide-image">
-                  <img src="images/app.jpg" alt="Banking app on mobile phone" />
-                </div>
-                <div class="slide-caption">
-                  <strong>App</strong>
-                  <span>Banking in your pocket</span>
-                </div>
-              </div>
-
-              <div class="slide">
-                <div class="slide-image">
-                  <img src="images/customer.jpg" alt="Customer at the bank desk" />
-                </div>
-                <div class="slide-caption">
-                  <strong>Customer</strong>
-                  <span>Friendly service, every step</span>
-                </div>
-              </div>
-
-              <div class="slide">
-                <div class="slide-image">
-                  <img src="images/desk.jpg" alt="Bank office desk" />
-                </div>
-                <div class="slide-caption">
-                  <strong>Desk</strong>
-                  <span>Support that feels personal</span>
-                </div>
-              </div>
-            </div>
+            <a class="primary-button" href="contact.html">Let’s get started <span aria-hidden="true">↗</span></a>
+            <a class="secondary-button" href="services.html">Explore our services</a>
           </div>
         </div>
       </div>
+      <a class="hero-scroll" href="#quick-links">Discover Waila <span aria-hidden="true">↓</span></a>
+    </section>
 
-      <div class="container hero-stats" aria-label="Waila company highlights">
-        <div class="hero-stat">
-          <strong>2009</strong>
-          <span>Founded</span>
+    <section class="home-quick-links" id="quick-links" aria-label="Explore banking">
+      <div class="container quick-links-grid">
+        <a class="quick-link" href="personal-banking.html">
+          <span class="quick-link-icon" aria-hidden="true">01</span>
+          <span><small>For you</small><strong>Personal banking</strong></span>
+          <span class="quick-link-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="quick-link" href="business-banking.html">
+          <span class="quick-link-icon" aria-hidden="true">02</span>
+          <span><small>For your business</small><strong>Business banking</strong></span>
+          <span class="quick-link-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="quick-link" href="loans.html">
+          <span class="quick-link-icon" aria-hidden="true">03</span>
+          <span><small>For your next step</small><strong>Loans & financing</strong></span>
+          <span class="quick-link-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="quick-link" href="contact.html">
+          <span class="quick-link-icon" aria-hidden="true">04</span>
+          <span><small>We’re right here</small><strong>Visit or get in touch</strong></span>
+          <span class="quick-link-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section home-welcome">
+      <div class="container welcome-grid">
+        <div class="welcome-image-wrap">
+          <img class="welcome-image" src="images/customer.jpg" alt="A customer speaking with a bank representative" />
+          <div class="image-caption"><span>Banking, made personal.</span><span aria-hidden="true">✳</span></div>
         </div>
-        <div class="hero-stat">
-          <strong>24/7</strong>
-          <span>Support</span>
-        </div>
-        <div class="hero-stat">
-          <strong>SME</strong>
-          <span>Focus</span>
-        </div>
-        <div class="hero-stat">
-          <strong>NDIC</strong>
-          <span>Support</span>
+        <div class="welcome-copy">
+          <span class="home-kicker">A warm welcome from Waila</span>
+          <h2>Good banking starts with <em>good people.</em></h2>
+          <p>We’re Waila Microfinance Bank. We’re here to make the financial side of life feel more manageable, with practical services and a team that takes the time to listen.</p>
+          <p>Whether you’re saving for tomorrow, growing a business, or figuring out your next move, we’ll help you find a way forward that feels right for you.</p>
+          <a class="text-link" href="about.html">Get to know us <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
-    <section class="partners-wrap" aria-label="Our partners">
-      <div class="container partners-inner">
-        <div class="partners-title">OUR PARTNERS</div>
-        <div class="ticker-wrap">
-          <div class="ticker-track">
-            <span>Moneta</span>
-            <span>Mobicash</span>
-            <span>Kowapay</span>
-            <span>Moneta</span>
-            <span>Mobicash</span>
-            <span>Kowapay</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container feature-grid">
-        <aside class="info-panel">
-          <h3>Quick information</h3>
-          <details open>
-            <summary>About us</summary>
-            <p>We build financial relationships around trust, support, and sustainable growth for local families and small businesses.</p>
-          </details>
-          <details>
-            <summary>Business support</summary>
-            <p>Practical financing and banking support designed to help entrepreneurs and businesses manage growth responsibly.</p>
-          </details>
-          <details>
-            <summary>Customer care</summary>
-            <p>Speak with our team for account guidance, service questions, or support on your banking needs.</p>
-          </details>
-        </aside>
-
-        <div class="right-stack">
-          <div class="quote-card">
-            <p>Better banking for the people who build the community.</p>
-            <span>Waila Microfinance Bank</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="about">
+    <section class="section home-services">
       <div class="container">
         <div class="section-header">
-          <h2>Thoughtful finance for everyday life.</h2>
-          <p>From everyday savings to SME growth and local support, we focus on clear, practical banking built around community needs.</p>
+          <div>
+            <span class="home-kicker">Made for real life</span>
+            <h2>Here for the things<br />you’re working towards.</h2>
+          </div>
+          <p>Explore straightforward financial services for individuals, families, and businesses at every stage.</p>
         </div>
 
-        <div class="two-col">
-          <div class="overview-card">
-            <img class="about-image" src="images/customer.jpg" alt="Customer speaking with a bank representative" />
-            <p>Waila Microfinance Bank serves individuals, traders, and businesses in Karu and beyond with a strong commitment to personal service and long-term financial confidence.</p>
-            <p>Our work centers on accessible savings, responsible lending, and reliable banking support that helps families and enterprises build steady progress over time.</p>
-          </div>
-
-          <div class="metrics-grid">
-            <div class="metric-card">
-              <strong>2009</strong>
-              <span>Founded</span>
-            </div>
-            <div class="metric-card">
-              <strong>24/7</strong>
-              <span>Support</span>
-            </div>
-            <div class="metric-card">
-              <strong>SME</strong>
-              <span>Focus</span>
-            </div>
-            <div class="metric-card">
-              <strong>NDIC</strong>
-              <span>Support</span>
-            </div>
-          </div>
+        <div class="home-service-grid">
+          <a class="home-service-card" href="personal-banking.html">
+            <span class="service-index">01 / PERSONAL</span>
+            <h3>Make room for your plans.</h3>
+            <p>Everyday accounts and savings support to help you feel more in control of your money.</p>
+            <span class="service-card-link">Explore personal banking <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="home-service-card" href="business-banking.html">
+            <span class="service-index">02 / BUSINESS</span>
+            <h3>Big ideas need backing.</h3>
+            <p>Useful banking and financing options for the people building local businesses.</p>
+            <span class="service-card-link">Explore business banking <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="home-service-card" href="loans.html">
+            <span class="service-index">03 / FINANCING</span>
+            <h3>Take your next step.</h3>
+            <p>Talk with our team about financing for personal, business, or agricultural needs.</p>
+            <span class="service-card-link">Explore loans <span aria-hidden="true">↗</span></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-header">
-          <h2>What we offer.</h2>
-          <p>Simple solutions for the way people save, borrow, and grow their businesses locally.</p>
+    <section class="home-digital">
+      <div class="container digital-grid">
+        <div class="digital-copy">
+          <span class="home-kicker">A simpler way to bank</span>
+          <h2>Your banking,<br />wherever life takes you.</h2>
+          <p>Get in touch with our team to learn about convenient ways to manage your banking and find the right services for you.</p>
+          <a class="primary-button" href="contact.html">Ask us how <span aria-hidden="true">↗</span></a>
         </div>
-
-        <div class="card-grid">
-          <article class="card">
-            <span class="tag">Savings</span>
-            <h3>Daily savings accounts</h3>
-            <p>Secure, practical savings options for individuals, groups, and small businesses.</p>
-          </article>
-          <article class="card">
-            <span class="tag">Loans</span>
-            <h3>Micro loans</h3>
-            <p>Flexible short-term support for traders, households, and urgent personal needs.</p>
-          </article>
-          <article class="card">
-            <span class="tag">Growth</span>
-            <h3>SME financing</h3>
-            <p>Working capital and expansion support for businesses ready to scale sustainably.</p>
-          </article>
-          <article class="card">
-            <span class="tag">Agriculture</span>
-            <h3>Agri support</h3>
-            <p>Seasonal and operational support for farmers and agriculture-related enterprises.</p>
-          </article>
-        </div>
+        <img src="images/app.jpg" alt="A customer using a mobile banking service" />
       </div>
     </section>
 
-    <section class="section section-alt" id="location">
-      <div class="container">
-        <div class="section-header">
-          <h2>Find us in Karu.</h2>
-          <p>Our branch is positioned to serve local communities with quick access and welcoming support.</p>
+    <section class="home-contact">
+      <div class="container home-contact-inner">
+        <div>
+          <span class="home-kicker">We’re just around the corner</span>
+          <h2>Let’s talk about<br />what comes next.</h2>
         </div>
-
-        <div class="two-col">
-          <div class="overview-card">
-            <p><strong>Farida Plaza</strong>, by Shopping Center,<br />One Man Village, Mararaba, Karu LGA,<br />Nasarawa State, Nigeria.</p>
-            <p>Use official branch details once confirmed for publication.</p>
-          </div>
-
-          <div class="metrics-grid">
-            <div class="metric-card">
-              <strong>Mon-Fri</strong>
-              <span>8:00 AM – 4:00 PM</span>
-            </div>
-            <div class="metric-card">
-              <strong>Sat</strong>
-              <span>Closed</span>
-            </div>
-            <div class="metric-card">
-              <strong>Sun</strong>
-              <span>Closed</span>
-            </div>
-            <div class="metric-card">
-              <strong>Karu</strong>
-              <span>Local branch</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2>Talk to us.</h2>
-          <p>Reach out for new accounts, loan guidance, or general banking enquiries.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Phone</h3>
-            <p>+234 803 561 6156</p>
-            <small>Primary customer line for enquiries.</small>
-          </div>
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>admin@wailamfbank.com.ng</p>
-            <small>Send support enquiries anytime.</small>
-          </div>
+        <div class="home-contact-details">
+          <p>Visit us at Farida Plaza, by Shopping Center, One Man Village, Mararaba, Karu LGA, Nasarawa State.</p>
+          <a href="tel:+2348035616156">+234 803 561 6156</a>
+          <a class="text-link" href="contact.html">Find your way to Waila <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="page-footer">
+  <footer class="page-footer" id="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
         <img src="images/logo.png" alt="Waila logo" />
