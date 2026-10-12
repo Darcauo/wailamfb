@@ -74,7 +74,6 @@ const heroSlider = document.querySelector('[data-hero-slider]');
 if (heroSlider) {
   const slides = Array.from(heroSlider.querySelectorAll('[data-hero-slide]'));
   const indicators = Array.from(heroSlider.querySelectorAll('[data-hero-indicator]'));
-  const count = heroSlider.querySelector('[data-hero-count]');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let activeSlide = 0;
   let slideTimer;
@@ -90,7 +89,6 @@ if (heroSlider) {
     indicators.forEach((indicator, indicatorIndex) => {
       indicator.setAttribute('aria-current', String(indicatorIndex === activeSlide));
     });
-    if (count) count.textContent = `${String(activeSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
   };
 
   const stopTimer = () => window.clearInterval(slideTimer);
@@ -147,4 +145,46 @@ if (contactSubject) {
   if (requestedPackage && packageSubjects[requestedPackage]) {
     contactSubject.value = packageSubjects[requestedPackage];
   }
+}
+
+const partnershipForm = document.querySelector('[data-partnership-inquiry]');
+if (partnershipForm) {
+  partnershipForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const phoneLink = document.querySelector('footer a[href^="tel:"]');
+    if (!phoneLink) {
+      window.alert('The WhatsApp contact number is unavailable. Please contact Waila by email.');
+      return;
+    }
+
+    const phoneDigits = phoneLink.getAttribute('href').slice(4).replace(/\D/g, '');
+    const whatsappNumber = phoneDigits.startsWith('0')
+      ? `234${phoneDigits.slice(1)}`
+      : phoneDigits;
+    if (!/^\d{10,15}$/.test(whatsappNumber)) {
+      window.alert('The WhatsApp contact number is invalid. Please contact Waila by email.');
+      return;
+    }
+
+    const formData = new FormData(partnershipForm);
+    const fields = [
+      ['Full name', 'full-name'],
+      ['Organization', 'organization'],
+      ['Email', 'email'],
+      ['Phone number', 'phone'],
+      ['Partnership type', 'partnership-type'],
+      ['Message', 'message']
+    ];
+    const inquiryDetails = fields
+      .map(([label, name]) => {
+        const value = String(formData.get(name) || '').trim();
+        return value ? `${label}: ${value}` : '';
+      })
+      .filter(Boolean)
+      .join('\n');
+    const message = `Hello Waila, I would like to make a partnership enquiry.\n\n${inquiryDetails}`;
+
+    window.location.assign(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`);
+  });
 }
