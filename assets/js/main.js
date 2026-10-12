@@ -134,6 +134,46 @@ if (heroSlider) {
 
 const contactForm = document.querySelector('#contact-form');
 const contactSubject = contactForm?.querySelector('#subject');
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const phoneLink = document.querySelector('.contact-information-card a[href^="tel:"]');
+    if (!phoneLink) {
+      window.alert('The WhatsApp contact number is unavailable. Please contact Waila by email.');
+      return;
+    }
+
+    const phoneDigits = phoneLink.getAttribute('href').slice(4).replace(/\D/g, '');
+    const whatsappNumber = phoneDigits.startsWith('0')
+      ? `234${phoneDigits.slice(1)}`
+      : phoneDigits;
+    if (!/^\d{10,15}$/.test(whatsappNumber)) {
+      window.alert('The WhatsApp contact number is invalid. Please contact Waila by email.');
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+    const enquiryFields = [
+      ['Name', 'name'],
+      ['Email', 'email'],
+      ['Phone', 'phone'],
+      ['Subject', 'subject'],
+      ['Message', 'message']
+    ];
+    const enquiry = enquiryFields
+      .map(([label, name]) => {
+        const value = formData.get(name)?.toString().trim();
+        return value ? `${label}: ${value}` : null;
+      })
+      .filter(Boolean);
+    const message = `Hello Waila, I would like to make an enquiry.\n\n${enquiry.join('\n')}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.location.assign(whatsappUrl);
+  });
+}
+
 if (contactSubject) {
   const packageSubjects = {
     education: 'Apply for School Fees Loan',
@@ -183,15 +223,13 @@ if (partnershipForm) {
       })
       .filter(Boolean);
     const message = `Hello Waila, I would like to make a partnership enquiry.\n\n${enquiry.join('\n')}`;
-    const whatsappUrl = new URL('https://api.whatsapp.com/send');
-    whatsappUrl.searchParams.set('phone', whatsappNumber);
-    whatsappUrl.searchParams.set('text', message);
-    const whatsappWindow = window.open(whatsappUrl.toString(), '_blank');
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappWindow = window.open(whatsappUrl, '_blank');
 
     if (whatsappWindow) {
       whatsappWindow.opener = null;
     } else {
-      window.location.assign(whatsappUrl.toString());
+      window.location.assign(whatsappUrl);
     }
   });
 }
