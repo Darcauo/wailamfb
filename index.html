@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NG">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waila Microfinance Bank | Karu, Nasarawa</title>
-  <meta name="description" content="Waila Microfinance Bank is a customer focused financial institution supporting individuals, businesses, and communities with responsible microfinance and SME banking services." />
-  <meta property="og:title" content="Waila Microfinance Bank" />
-  <meta property="og:description" content="Financial services for individuals, businesses, and communities in Karu, Nasarawa State." />
+  <title>Waila Microfinance Bank | Karu, Nasarawa Nigeria</title>
+  <meta name="description" content="Waila Microfinance Bank offers personal, SME and agricultural banking, business loans and financial services in Karu, Nasarawa, Nigeria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_NG" />
+  <meta property="og:title" content="Waila Microfinance Bank | Karu, Nasarawa Nigeria" />
+  <meta property="og:description" content="Personal, SME and agricultural banking, business loans and financial services in Karu, Nasarawa, Nigeria." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Waila Microfinance Bank | Karu, Nasarawa Nigeria" />
+  <meta name="twitter:description" content="Personal, SME and agricultural banking, business loans and financial services in Karu, Nasarawa, Nigeria." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Waila Microfinance Bank",
+      "description": "Personal, business, SME and agricultural banking services in Karu, Nasarawa State, Nigeria.",
+      "email": "support@wailamfbank.com.ng",
+      "telephone": "09137778610",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Farida Plaza, before Adehi fueling station, opposite DBM Plaza, One Man Village (Ado), Abuja-Keffi Expressway",
+        "addressLocality": "Karu",
+        "addressRegion": "Nasarawa State",
+        "addressCountry": "NG"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Karu" },
+        { "@type": "AdministrativeArea", "name": "Nasarawa State" },
+        { "@type": "Country", "name": "Nigeria" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "https://schema.org/Monday",
+          "https://schema.org/Tuesday",
+          "https://schema.org/Wednesday",
+          "https://schema.org/Thursday",
+          "https://schema.org/Friday"
+        ],
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -40,6 +79,19 @@
       </nav>
 
       <div class="header-actions">
+        <div class="site-search" data-site-search>
+          <button class="search-toggle" type="button" data-search-toggle aria-label="Open site search" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m15.5 15.5 4.2 4.2"></path></svg>
+          </button>
+          <form class="site-search-panel" data-search-form role="search" hidden>
+            <label class="visually-hidden" for="site-search-input">Search Waila</label>
+            <div class="site-search-field">
+              <input id="site-search-input" type="search" data-search-input placeholder="Search by keyword..." autocomplete="off" />
+              <button class="site-search-submit" type="submit">Search</button>
+            </div>
+            <div class="site-search-results" data-search-results aria-live="polite"></div>
+          </form>
+        </div>
         <a href="contact.html" class="primary-button">Talk to our team <span aria-hidden="true">↗</span></a>
         <button class="mobile-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">☰</button>
       </div>
@@ -250,6 +302,9 @@
     </div>
   </footer>
 
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top" title="Back to top" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6M12 8v12"></path></svg>
+  </button>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

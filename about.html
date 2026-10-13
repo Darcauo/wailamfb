@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NG">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Waila Microfinance Bank | Waila MFB</title>
-  <meta name="description" content="Learn about Waila Microfinance Bank, its mission, customer focus, and commitment to financial inclusion in Karu, Nasarawa State." />
-  <meta property="og:title" content="About Waila Microfinance Bank" />
-  <meta property="og:description" content="A customer focused microfinance institution supporting individuals, entrepreneurs, and communities." />
+  <title>About Waila Microfinance Bank | Karu, Nigeria</title>
+  <meta name="description" content="Learn how Waila Microfinance Bank supports financial inclusion, personal banking, SMEs and local communities in Karu, Nasarawa State." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_NG" />
+  <meta property="og:title" content="About Waila Microfinance Bank | Karu, Nigeria" />
+  <meta property="og:description" content="Learn how Waila Microfinance Bank supports financial inclusion, personal banking, SMEs and local communities in Karu, Nasarawa State." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About Waila Microfinance Bank | Karu, Nigeria" />
+  <meta name="twitter:description" content="Learn how Waila Microfinance Bank supports financial inclusion, personal banking, SMEs and local communities in Karu, Nasarawa State." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container navbar">
-      <a href="/" class="brand" aria-label="Go to the Waila Microfinance Bank home page">
+      <a href="index.html" class="brand" aria-label="Go to the Waila Microfinance Bank home page">
         <img src="images/logo.png" alt="Waila Microfinance Bank logo" />
       </a>
 
@@ -31,6 +36,19 @@
       </nav>
 
       <div class="header-actions">
+        <div class="site-search" data-site-search>
+          <button class="search-toggle" type="button" data-search-toggle aria-label="Open site search" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m15.5 15.5 4.2 4.2"></path></svg>
+          </button>
+          <form class="site-search-panel" data-search-form role="search" hidden>
+            <label class="visually-hidden" for="site-search-input">Search Waila</label>
+            <div class="site-search-field">
+              <input id="site-search-input" type="search" data-search-input placeholder="Search by keyword..." autocomplete="off" />
+              <button class="site-search-submit" type="submit">Search</button>
+            </div>
+            <div class="site-search-results" data-search-results aria-live="polite"></div>
+          </form>
+        </div>
         <button class="mobile-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">☰</button>
         <a href="contact.html" class="primary-button">Talk to us</a>
       </div>
@@ -41,7 +59,7 @@
     <section class="page-hero page-hero-about">
       <div class="container">
         <span class="eyebrow">About Waila</span>
-        <h1 class="page-title">A dependable financial partner for people and business.</h1>
+        <h1 class="page-title">A customer-focused microfinance bank serving Karu, Nasarawa.</h1>
       </div>
     </section>
 
@@ -199,6 +217,9 @@
     </div>
   </footer>
 
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top" title="Back to top" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6M12 8v12"></path></svg>
+  </button>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
