@@ -1,27 +1,3 @@
-const root = document.documentElement;
-const savedTheme = localStorage.getItem('waila-theme');
-if (savedTheme) {
-  root.setAttribute('data-theme', savedTheme);
-}
-
-const themeToggle = document.querySelector('[data-theme-toggle]');
-if (themeToggle) {
-  const updateToggleLabel = () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    themeToggle.textContent = isDark ? '☀' : '☾';
-  };
-
-  updateToggleLabel();
-
-  themeToggle.addEventListener('click', () => {
-    const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('waila-theme', nextTheme);
-    updateToggleLabel();
-  });
-}
-
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const navMenu = document.querySelector('[data-nav-menu]');
 if (menuToggle && navMenu) {
